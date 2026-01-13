@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Work Tracker</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="layout">
+  <div class="sidebar">
+    <h2>WorkTracker</h2>
+    <a href="/" class="active">Dashboard</a>
+    <a href="/add">Add Work</a>
+    <a href="/report">Reports</a>
+  </div>
+
+  <div class="main">
+    {% block content %}{% endblock %}
+  </div>
+</div>
+
+</body>
+</html>
