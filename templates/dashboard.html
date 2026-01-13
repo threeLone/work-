@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div class="cards">
+  <div class="card">
+    <h3>Active Tasks</h3>
+    <p>{{ works|selectattr("status","equalto","Active")|list|length }}</p>
+  </div>
+  <div class="card">
+    <h3>Completed</h3>
+    <p>{{ works|selectattr("status","equalto","Completed")|list|length }}</p>
+  </div>
+  <div class="card">
+    <h3>Total Tasks</h3>
+    <p>{{ works|length }}</p>
+  </div>
+</div>
+
+<h3>Current Tasks</h3>
+
+<div class="task-grid">
+{% for w in works %}
+  <div class="task">
+    <span class="badge {{ w.status }}">{{ w.status }}</span>
+    <h4>{{ w.task }}</h4>
+    <small>{{ w.start_time }} → {{ w.end_time }}</small><br>
+    <a class="btn" href="/edit/{{ w.id }}">Update Details</a>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
