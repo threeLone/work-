@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Reports</h2>
+
+<a class="btn" href="/download">Export CSV</a>
+
+<table>
+<tr>
+  <th>Task</th>
+  <th>Status</th>
+  <th>Start</th>
+  <th>End</th>
+</tr>
+{% for w in works %}
+<tr>
+  <td>{{ w.task }}</td>
+  <td><span class="badge {{ w.status }}">{{ w.status }}</span></td>
+  <td>{{ w.start_time }}</td>
+  <td>{{ w.end_time }}</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
