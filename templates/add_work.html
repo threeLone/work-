@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Add New Work</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+<label>Task Name</label>
+<input name="task" required>
+
+<label>Details</label>
+<textarea name="details" required></textarea>
+
+<label>Status</label>
+<select name="status">
+  <option>Active</option>
+  <option>Pending</option>
+  <option>Completed</option>
+</select>
+
+<label>Start Time</label>
+<input type="datetime-local" name="start_time" required>
+
+<label>End Time</label>
+<input type="datetime-local" name="end_time" required>
+
+<label>Screenshot</label>
+<input type="file" name="screenshot">
+
+<button type="submit">Save Work</button>
+
+</form>
+
+{% endblock %}
